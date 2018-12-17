@@ -236,7 +236,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"randomise\", function() { return randomise; });\nvar formatValue = function formatValue(x) {\n  return x.toString().substring(0, 7);\n};\n\nvar randomise = function randomise(value) {\n  var percentage = value / 100 * 10;\n  var min = value - percentage;\n  var max = value + percentage;\n  return formatValue(Math.random() * (max - min) + min);\n};\n\n//# sourceURL=webpack:///./src/components/utils/randomiser.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"randomise\", function() { return randomise; });\n// formats to 6 characters\nvar formatValue = function formatValue(x) {\n  return x.toString().substring(0, 7);\n}; // randomises within +/- 10% of the value\n\n\nvar randomise = function randomise(value) {\n  var percentage = value / 100 * 10;\n  var min = value - percentage;\n  var max = value + percentage;\n  return formatValue(Math.random() * (max - min) + min);\n};\n\n//# sourceURL=webpack:///./src/components/utils/randomiser.js?");
 
 /***/ }),
 

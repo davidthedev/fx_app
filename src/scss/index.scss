@@ -1,5 +1,4 @@
-// settings
-@import 'settings/_page';
+// global settings
 @import 'settings/_color';
 @import 'settings/_font';
 
@@ -9,3 +8,6 @@
 @import '../components/Arrow/styles.scss';
 @import '../components/Grid/styles.scss';
 @import '../components/Page/styles.scss';
+
+// page settings
+@import 'settings/_page';
