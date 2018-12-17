@@ -8,8 +8,8 @@ Demo gif
 ## Instructions to run
 
 * Clone or download the repo
-* Go to _src/_ and open _index.html_
-* The app should start running in your browser
+* Go to _src/_ and open _index.html_ in a browser
+* The app should start running
 * To run test in the root directory of the project type **npm run test** in the command line
 
 ## Features
