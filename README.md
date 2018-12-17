@@ -5,7 +5,7 @@ Demo gif
 
 ![](http://g.recordit.co/ejPSatMZ6Y.gif)
 
-## Instructions to run
+## Instructions on how to run the app
 
 * Clone or download the repo
 * Go to _src/_ and open _index.html_ in a browser
@@ -26,7 +26,7 @@ Demo gif
 
 * Pointed indicators
 
-### Suggested improvements
+## Suggested improvements
 
 * Checks could be added to the components to conditionally render (depending on the requirements)
 * Linter could be added for cleaner code and format
