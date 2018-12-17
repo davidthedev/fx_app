@@ -38,4 +38,5 @@ Demo gif
 * Webpack config could be improved (split into development / production)
 * CSS could be minimified and uglyfied
 * CSS properties such as **display** could be extracted into a scss/utils directory
+* We could create an endpoint in Node.js that serves data to our client. Our client could either poll (short poll) the endpoint or we could upgrade to a connection via a WebSocket protocol (if supported)
 * and more
