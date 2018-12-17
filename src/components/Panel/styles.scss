@@ -1,0 +1,23 @@
+.panel {
+  border: 1px solid $grey;
+  margin-left: 5px;
+  margin-top: 5px;
+
+  &__head {
+    background-color: $dark-grey;
+    color: $white;
+    padding: 3px 0;
+    text-align: center;
+  }
+
+  &__body {
+    background-color: $light-blue;
+    display: flex;
+    padding: 5px 10px;
+  }
+
+  &__foot {
+    background-color: #F0F0F1;
+    height: 30px;
+  }
+}

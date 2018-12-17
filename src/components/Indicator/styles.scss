@@ -1,0 +1,59 @@
+.c-indicator {
+  background-color: $white;
+  flex: 1;
+  padding: 5px;
+  position: relative;
+
+  &__currency {
+    font-size: $font-size-indicator-currency;
+  }
+
+  &__value {
+    display: inline;
+
+    &--normal, &--top {
+      font-size: $font-size-indicator-value-normal;
+    }
+    
+    &--large {
+      font-size: $font-size-indicator-value-large;
+      font-weight: 700;
+    }
+
+    &--top {
+      vertical-align: super;
+    }
+  }
+
+  &--sell {
+    text-align: left;
+  }
+
+  &--sell-blur {
+    color: $red;
+  }
+
+  &--sell-focus {
+    color: $white;
+    background-color: $bright-red;
+    outline: 2px solid $blue;
+  }
+
+  &--buy {
+    text-align: right;
+  }
+
+  &--buy-blur {
+    color: $green;
+  }
+
+  &--buy-focus {
+    color: $white;
+    background-color: $bright-green;
+    outline: 2px solid $blue;
+  }
+
+  &--blur {
+    color: $grey;
+  }
+}
