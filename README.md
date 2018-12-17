@@ -3,7 +3,7 @@
 
 Demo gif
 
-![](http://g.recordit.co/ejPSatMZ6Y.gif)
+![](http://g.recordit.co/GAsvteH1yT.gif)
 
 ## Instructions on how to run the app
 
@@ -14,17 +14,13 @@ Demo gif
 
 ## Features
 
-* CSS Grid
+* CSS Grid (fallback to floats)
 * BEM and ITCSS principles
 * SCSS
 * Manually created webpack config (I felt that create-react-app is too bloated for such a small project)
 * React.js
 * Jest, Enzyme and Sinon used for testing
 * Datasource that gets updated every second
-
-## To do
-
-* Pointed indicators
 
 ## Suggested improvements
 
@@ -34,9 +30,10 @@ Demo gif
 * Components could be split into atoms, molecules and organisms to the atomic design principle (better separation of concerns)
 * Tests could be improved
 * Scripts could be loaded in the head tag
-* Depending on what browsers we want to support and what the designs look like for mobile view and other breakpoints a different strategy for responsive grid could be used. This is particullary important when using CSS Grid, we could a check to see if a browser supports CSS Grid and provide a flexbox or floats fallback. 
+* Depending on what browsers we want to support and what the designs look like for mobile view and other breakpoints a different strategy for responsive grid could be used. 
 * Webpack config could be improved (split into development / production)
-* CSS could be minimified and uglyfied
+* CSS could be minimified and uglyfied for production
 * CSS properties such as **display** could be extracted into a scss/utils directory
 * We could create an endpoint in Node.js that serves data to our client. Our client could either poll (short poll) the endpoint or we could upgrade to a connection via a WebSocket protocol (if supported)
+* Scss could be refactored
 * and more
