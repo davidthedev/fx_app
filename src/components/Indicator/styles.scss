@@ -1,3 +1,8 @@
+$triangle-border-width-before: 23px;
+$triangle-border-width-after: 21px;
+$triangle-margin-top-before: -23px;
+$triangle-margin-top-after: -21px;
+
 .c-indicator {
   background-color: $white;
   border: 2px solid $light-grey;
@@ -34,6 +39,7 @@
       width: 10px;
       position: absolute;
       pointer-events: none;
+      top: 40%;
     }
   }
 
@@ -45,18 +51,18 @@
       left: 100%;
     }
 
+    &:before {
+      border-color: transparent;
+      border-left-color: $light-grey;
+      border-width: $triangle-border-width-before;
+      margin-top: $triangle-margin-top-before;
+    }
+
     &:after {
       border-color: transparent;
       border-left-color: $white;
-      border-width: 20px;
-      margin-top: -15px;
-    }
-
-    &:before {
-      border-color: transparent;
-      border-left-color: #e8e8e8;
-      border-width: 23px;
-      margin-top: -7px;
+      border-width: $triangle-border-width-after;
+      margin-top: $triangle-margin-top-after;
     }
   }
 
@@ -86,18 +92,18 @@
       right: 100%;
     }
 
-    &:after {
-      border-color: transparent;
-      border-right-color: $white;
-      border-width: 20px;
-      margin-top: -15px;
-    }
-
     &:before {
       border-color: transparent;
       border-right-color: $light-grey;
-      border-width: 23px;
-      margin-top: -7px;
+      border-width: $triangle-border-width-before;
+      margin-top: $triangle-margin-top-before;
+    }
+
+    &:after {
+      border-color: transparent;
+      border-right-color: $white;
+      border-width: $triangle-border-width-after;
+      margin-top: $triangle-margin-top-after;
     }
   }
 

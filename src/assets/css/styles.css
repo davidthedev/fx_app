@@ -1,23 +1,21 @@
-.panel {
-  border: 1px solid #969696;
-  margin-left: 5px;
-  margin-top: 5px; }
-  .panel__head {
+.c-panel {
+  border: 1px solid #969696; }
+  .c-panel__head {
     background-color: #5B5B5B;
     color: #FFFFFF;
     padding: 3px 0;
     text-align: center; }
-  .panel__body {
+  .c-panel__body {
     background-color: #EEF4F8;
     display: flex;
     padding: 5px 10px; }
-  .panel__foot {
+  .c-panel__foot {
     background-color: #F0F0F1;
     height: 30px; }
 
 .c-indicator {
   background-color: #FFFFFF;
-  border: 1px solid #E8E8E8;
+  border: 2px solid #E8E8E8;
   flex: 1;
   padding: 5px;
   position: relative; }
@@ -32,29 +30,69 @@
       font-weight: 700; }
     .c-indicator__value--top {
       vertical-align: super; }
+  .c-indicator--sell:before, .c-indicator--sell:after, .c-indicator--buy:before, .c-indicator--buy:after {
+    border: solid transparent;
+    content: " ";
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    pointer-events: none;
+    top: 40%; }
   .c-indicator--sell {
     text-align: left; }
+    .c-indicator--sell:before, .c-indicator--sell:after {
+      left: 100%; }
+    .c-indicator--sell:before {
+      border-color: transparent;
+      border-left-color: #E8E8E8;
+      border-width: 23px;
+      margin-top: -23px; }
+    .c-indicator--sell:after {
+      border-color: transparent;
+      border-left-color: #FFFFFF;
+      border-width: 21px;
+      margin-top: -21px; }
   .c-indicator--sell-blur {
     color: #C9131A; }
   .c-indicator--sell-focus {
     color: #FFFFFF;
     background-color: #FF0000;
-    outline: 2px solid #4BACC6; }
+    border: 2px solid #4BACC6; }
+    .c-indicator--sell-focus:after {
+      border-left-color: #FF0000; }
+    .c-indicator--sell-focus:before {
+      border-left-color: #4BACC6; }
   .c-indicator--buy {
     text-align: right; }
+    .c-indicator--buy:before, .c-indicator--buy:after {
+      right: 100%; }
+    .c-indicator--buy:before {
+      border-color: transparent;
+      border-right-color: #E8E8E8;
+      border-width: 23px;
+      margin-top: -23px; }
+    .c-indicator--buy:after {
+      border-color: transparent;
+      border-right-color: #FFFFFF;
+      border-width: 21px;
+      margin-top: -21px; }
   .c-indicator--buy-blur {
     color: #68892E; }
   .c-indicator--buy-focus {
     color: #FFFFFF;
     background-color: #7FD13B;
-    outline: 2px solid #4BACC6; }
+    border: 2px solid #4BACC6; }
+    .c-indicator--buy-focus:after {
+      border-right-color: #7FD13B; }
+    .c-indicator--buy-focus:before {
+      border-right-color: #4BACC6; }
   .c-indicator--blur {
     color: #969696; }
 
 .c-arrow {
   height: 0;
   width: 0;
-  margin: 0 15px; }
+  margin: 0 20px; }
   .c-arrow--down {
     border-top: 15px solid #C9131A;
     border-left: 5px solid transparent;
@@ -67,19 +105,37 @@
     border-top: 10px solid transparent;
     margin-top: -10px; }
 
-.c-grid {
-  display: grid;
-  grid-gap: 5px;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.c-grid .c-panel {
+  float: left;
+  width: 300px;
+  margin: 0 0 10px 10px; }
+
+@supports (display: grid) {
+  .c-grid {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin: 0 10px; }
+    .c-grid .c-panel {
+      float: none;
+      width: auto;
+      margin: 0; } }
 
 .c-page {
+  background-color: #2D2D2D;
+  color: #FFFFFF;
   font-weight: 700;
+  margin: 0 0 10px 0;
+  padding: 10px;
   text-align: center; }
 
 html {
   background-color: #E8E8E8;
   font-family: sans-serif; }
 
-*, *:before, *:after {
+* {
   box-sizing: border-box; }
+
+body {
+  margin: 0; }
 
