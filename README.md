@@ -10,7 +10,7 @@ Demo gif
 * Clone or download the repo
 * Go to _src/_ and open _index.html_ in a browser
 * The app should start running
-* To run test in the root directory of the project type **npm run test** in the command line
+* To run tests, in the root directory of the project type **npm run test** in the command line
 
 ## Features
 
