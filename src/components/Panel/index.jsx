@@ -53,14 +53,14 @@ export default class Panel extends Component {
     const { currencyPair } = this.props;
 
     return (
-      <div className="panel">
-        <div className="panel__head">{currencyPair}</div>
-        <div className="panel__body">
+      <div className="c-panel">
+        <div className="c-panel__head">{currencyPair}</div>
+        <div className="c-panel__body">
           {this.buildIndicator()}
           <Arrow hasBuyPriceDecreased={this.state.hasBuyPriceDecreased} />
           {this.buildIndicator(false)}
         </div>
-        <div className="panel__foot"></div>
+        <div className="c-panel__foot"></div>
       </div>
     )
   }

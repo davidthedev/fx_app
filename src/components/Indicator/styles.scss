@@ -1,6 +1,6 @@
 .c-indicator {
   background-color: $white;
-  border: 1px solid $light-grey;
+  border: 2px solid $light-grey;
   flex: 1;
   padding: 5px;
   position: relative;
@@ -25,9 +25,39 @@
       vertical-align: super;
     }
   }
+  
+  &--sell, &--buy {
+    &:before, &:after {
+      border: solid transparent;
+      content: " ";
+      height: 10px;
+      width: 10px;
+      position: absolute;
+      pointer-events: none;
+    }
+  }
 
+  // Sell indicator modifiers
   &--sell {
     text-align: left;
+
+    &:before, &:after {
+      left: 100%;
+    }
+
+    &:after {
+      border-color: transparent;
+      border-left-color: $white;
+      border-width: 20px;
+      margin-top: -15px;
+    }
+
+    &:before {
+      border-color: transparent;
+      border-left-color: #e8e8e8;
+      border-width: 23px;
+      margin-top: -7px;
+    }
   }
 
   &--sell-blur {
@@ -37,11 +67,38 @@
   &--sell-focus {
     color: $white;
     background-color: $bright-red;
-    outline: 2px solid $blue;
+    border: 2px solid $blue;
+
+    &:after {
+      border-left-color: $bright-red;
+    }
+
+    &:before {
+      border-left-color: $blue;
+    }
   }
 
+  // Buy indicator modifiers
   &--buy {
     text-align: right;
+
+    &:before, &:after {
+      right: 100%;
+    }
+
+    &:after {
+      border-color: transparent;
+      border-right-color: $white;
+      border-width: 20px;
+      margin-top: -15px;
+    }
+
+    &:before {
+      border-color: transparent;
+      border-right-color: $light-grey;
+      border-width: 23px;
+      margin-top: -7px;
+    }
   }
 
   &--buy-blur {
@@ -51,7 +108,15 @@
   &--buy-focus {
     color: $white;
     background-color: $bright-green;
-    outline: 2px solid $blue;
+    border: 2px solid $blue;
+
+    &:after {
+      border-right-color: $bright-green;
+    }
+
+    &:before {
+      border-right-color: $blue;
+    }
   }
 
   &--blur {

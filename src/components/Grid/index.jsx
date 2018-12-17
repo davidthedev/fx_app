@@ -7,7 +7,7 @@ export default class Grid extends Component {
     super(props);
 
     this.state = {
-      data: []
+      data: generate()
     };
 
     this.updateState = this.updateState.bind(this);
