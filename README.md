@@ -3,7 +3,7 @@
 
 Demo gif
 
-![](http://recordit.co/ejPSatMZ6Y)
+![](http://g.recordit.co/ejPSatMZ6Y.gif)
 
 ## Instructions to run
 
