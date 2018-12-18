@@ -8,6 +8,7 @@ Demo gif
 ## Instructions on how to run the app
 
 * Clone or download the repo
+* Unzip if necessary
 * Go to _src/_ and open _index.html_ in a browser
 * The app should start running
 * To run tests, in the root directory of the project type **npm run test** on the command line
