@@ -3,9 +3,12 @@ $triangle-border-width-after: 21px;
 $triangle-margin-top-before: -23px;
 $triangle-margin-top-after: -21px;
 
+$side-position: 99%;
+
 .c-indicator {
   background-color: $white;
   border: 2px solid $light-grey;
+  border-radius: 6px;
   flex: 1;
   padding: 5px;
   position: relative;
@@ -48,7 +51,7 @@ $triangle-margin-top-after: -21px;
     text-align: left;
 
     &:before, &:after {
-      left: 100%;
+      left: $side-position;
     }
 
     &:before {
@@ -89,7 +92,7 @@ $triangle-margin-top-after: -21px;
     text-align: right;
 
     &:before, &:after {
-      right: 100%;
+      right: $side-position;
     }
 
     &:before {
