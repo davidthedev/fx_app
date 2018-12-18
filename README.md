@@ -26,6 +26,7 @@ Demo gif
 ## Suggested improvements
 
 * Checks could be added to the components to conditionally render (depending on the requirements)
+* Error boundaries and logging could be added to catch any errors and log them
 * Linter could be added for cleaner code and format
 * Styled components could be used instead of BEM and ITCSS but this depends on the size of the team that is working on the project and requirements
 * Components could be split into atoms, molecules and organisms to follow the atomic design principle (better separation of concerns)
