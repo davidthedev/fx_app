@@ -36,6 +36,7 @@ Demo gif
 
 ### CSS
 * Styled components could be used instead of BEM and ITCSS but this depends on the size of the team that is working on the project and requirements
+* SVGs could be used for indicators instead of the pure CSS for easier manipulation 
 * CSS could be minimified and uglyfied for production
 * CSS properties such as **display** could be extracted into a scss/utils directory
 * Depending on what browsers we want to support and what the designs look like for mobile view and other breakpoints a different strategy for responsive grid could be used
