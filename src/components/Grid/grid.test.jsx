@@ -44,8 +44,6 @@ describe("Grid", () => {
       const clock = sinon.useFakeTimers();
       const instance = wrapper.instance();
 
-      // console.log(instance.state);
-
       expect(instance.state.data.length).toEqual(0);
 
       instance.componentDidMount();
