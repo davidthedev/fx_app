@@ -6,6 +6,11 @@
   }
 }
 
+.c-loader {
+  text-align: center;
+  font-size: 24px;
+}
+
 @supports (display: grid) {
   .c-grid {
     display: grid;

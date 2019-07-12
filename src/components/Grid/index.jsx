@@ -1,46 +1,90 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import Panel from "../Panel";
-import { generate } from "../utils/dataGenerator";
+import Button from "../Button";
+import { getDataStream } from "../../actions/stream";
+import { addTile, updateTileById } from "../../actions/tiles";
+import config from "../../config/default";
 
-export default class Grid extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      data: []
-    };
-
-    this.updateState = this.updateState.bind(this);
+export class Grid extends Component {
+  componentDidMount() {
+    this.props.dispatch(getDataStream());
   }
 
-  updateState() {
-    this.setState({
-      data: generate()
-    });
+  shouldRenderTiles() {
+    const { tiles, quotes } = this.props;
+
+    if (!tiles.allIds.length || !quotes.allIds.length) {
+      return false;
+    }
   }
 
-  buildPanels() {
-    return this.state.data.map((row, index) => {
+  renderTiles() {
+    const { quotes, tiles, dispatch } = this.props;
+
+    if (!this.shouldRenderTiles) {
+      return null;
+    }
+
+    return tiles.allIds.map((id, index) => {
+      const quoteId = tiles.byId[id].quoteId;
+      const quote = quotes.byId[quoteId];
+      const { pair, baseCurrency, quoteCurrency, sell, buy } = quote;
+
       return (
         <Panel
           key={index}
-          currencyPair={row.pair}
-          sellPrice={row.sell}
-          buyPrice={row.buy}
+          id={id}
+          quoteId={quoteId}
+          currencyPair={pair}
+          baseCurrency={baseCurrency}
+          sellPrice={sell}
+          quoteCurreny={quoteCurrency}
+          buyPrice={buy}
+          updateTileById={(tileId, quoteId) =>
+            dispatch(updateTileById(tileId, quoteId))
+          }
         />
       );
     });
   }
 
+  handleOnClickEvent(e) {
+    this.props.dispatch(addTile(config.defaultQuoteId));
+  }
+
+  renderButton() {
+    return (
+      <div className="c-options">
+        <Button
+          text={"Add tile"}
+          handleOnClickEvent={e => this.handleOnClickEvent(e)}
+        />
+      </div>
+    );
+  }
+
   render() {
-    return <div className="c-grid">{this.buildPanels()}</div>;
-  }
+    const { quotes } = this.props;
 
-  componentDidMount() {
-    this.interval = setInterval(() => this.updateState(), 1000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
+    if (!quotes.isFetching) {
+      return (
+        <div>
+          {this.renderButton()}
+          <div className="c-grid">{this.renderTiles()}</div>
+        </div>
+      );
+    } else {
+      return <div className="c-loader">Loading...</div>;
+    }
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    quotes: state.quotes,
+    tiles: state.tiles
+  };
+};
+
+export default connect(mapStateToProps)(Grid);
