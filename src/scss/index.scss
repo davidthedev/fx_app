@@ -1,13 +1,14 @@
 // global settings
-@import 'settings/_color';
-@import 'settings/_font';
+@import "settings/_color";
+@import "settings/_font";
 
 // components
-@import '../components/Panel/styles.scss';
-@import '../components/Indicator/styles.scss';
-@import '../components/Arrow/styles.scss';
-@import '../components/Grid/styles.scss';
-@import '../components/Page/styles.scss';
+@import "../components/Panel/styles.scss";
+@import "../components/Indicator/styles.scss";
+@import "../components/Arrow/styles.scss";
+@import "../components/Grid/styles.scss";
+@import "../components/Page/styles.scss";
+@import "../components/Button/styles.scss";
 
 // page settings
-@import 'settings/_page';
+@import "settings/_page";

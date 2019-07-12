@@ -2,3 +2,5 @@ node_modules/
 .vscode/*
 *.code*
 .history
+.code-workspace
+.history
