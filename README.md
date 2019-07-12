@@ -1,9 +1,5 @@
 # FX App demo
 
-Demo gif
-
-![](http://g.recordit.co/GAsvteH1yT.gif)
-
 ## Instructions on how to run the app
 
 - Clone or download the repo

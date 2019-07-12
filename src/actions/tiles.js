@@ -22,7 +22,7 @@ export const updateTileById = (tileId, quoteId) => {
 
 export const addTile = quoteId => {
   return (dispatch, getState) => {
-    // get the last num in state to generate the next id - very hack
+    // get the last num in state to generate the next id - very hacky
     const lastId = getState().tiles.allIds[getState().tiles.allIds.length - 1];
     const id = (parseInt(lastId) + 1).toString();
 

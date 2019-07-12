@@ -49,7 +49,7 @@ export class Grid extends Component {
     });
   }
 
-  handleOnClickEvent(e) {
+  handleOnClickEvent() {
     this.props.dispatch(addTile(config.defaultQuoteId));
   }
 
@@ -58,7 +58,7 @@ export class Grid extends Component {
       <div className="c-options">
         <Button
           text={"Add tile"}
-          handleOnClickEvent={e => this.handleOnClickEvent(e)}
+          handleOnClickEvent={() => this.handleOnClickEvent()}
         />
       </div>
     );

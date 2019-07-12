@@ -12,7 +12,7 @@ import config from "../config/default";
 export default store => next => action => {
   switch (action.type) {
     case "OPEN_STREAM":
-      // to create a loading state
+      // create a loading state
       store.dispatch({ type: QUOTES_LOADING });
 
       setInterval(() => {
@@ -21,7 +21,7 @@ export default store => next => action => {
           return createFakeQuote(id);
         });
 
-        // and then processing to make it easier for us to store and manupilate (assuming that the stream does not provide the correct format)
+        // and then processing to make it easier for us to store and manupilate (assuming that the stream does not provide the data structure)
         const quotes = createQuotes(data);
 
         store.dispatch({ type: QUOTES_UPDATE, ...quotes });
