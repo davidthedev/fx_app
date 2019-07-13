@@ -22,25 +22,32 @@ export class Grid extends Component {
   renderTiles() {
     const { quotes, tiles, dispatch } = this.props;
 
-    if (!this.shouldRenderTiles) {
+    if (this.shouldRenderTiles()) {
       return null;
     }
 
     return tiles.allIds.map((id, index) => {
       const quoteId = tiles.byId[id].quoteId;
       const quote = quotes.byId[quoteId];
-      const { pair, baseCurrency, quoteCurrency, sell, buy } = quote;
+
+      const {
+        currencyPair,
+        baseCurrency,
+        quoteCurrency,
+        buyPrice,
+        sellPrice
+      } = quote;
 
       return (
         <Panel
           key={index}
           id={id}
           quoteId={quoteId}
-          currencyPair={pair}
+          currencyPair={currencyPair}
           baseCurrency={baseCurrency}
-          sellPrice={sell}
+          sellPrice={sellPrice}
           quoteCurreny={quoteCurrency}
-          buyPrice={buy}
+          buyPrice={buyPrice}
           updateTileById={(tileId, quoteId) =>
             dispatch(updateTileById(tileId, quoteId))
           }

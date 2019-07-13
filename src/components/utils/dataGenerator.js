@@ -6,11 +6,11 @@ export const createFakeQuote = id => {
 
   return {
     id,
-    pair: `${baseCurrency} ${quoteCurrency}`,
+    currencyPair: `${baseCurrency} ${quoteCurrency}`,
     baseCurrency,
-    buy: randomise(0.99143),
+    buyPrice: randomise(0.99143),
     quoteCurrency,
-    sell: randomise(0.99043)
+    sellPrice: randomise(0.99043)
   };
 };
 
