@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import Indicator from "../Indicator";
 import Arrow from "../Arrow";
-import config from "../../config/default";
-
-import Select from "react-select";
 
 export default class Panel extends Component {
   constructor(props) {
@@ -16,7 +13,18 @@ export default class Panel extends Component {
 
     this.handleMouseOver = this.handleMouseOver.bind(this);
     this.handleMouseOut = this.handleMouseOut.bind(this);
-    this.handleOnChange = this.handleOnChange.bind(this);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.buyPrice > this.props.buyPrice) {
+      this.setState({
+        hasBuyPriceDecreased: true
+      });
+    } else if (prevProps.buyPrice < this.props.buyPrice) {
+      this.setState({
+        hasBuyPriceDecreased: false
+      });
+    }
   }
 
   handleMouseOver(e) {
@@ -56,67 +64,16 @@ export default class Panel extends Component {
     );
   }
 
-  renderCurrencyPair() {
-    const { quoteId, id } = this.props;
-    const options = [];
-
-    config.supportedQuoteIds.map(supportedQuoteId => {
-      const label = supportedQuoteId.toUpperCase();
-      options.push({ quoteId: supportedQuoteId, label, tileId: id });
-    });
-
-    const selectedValue = { quoteId, label: quoteId.toUpperCase(), tileId: id };
-
-    const customStyles = {
-      option: (styles, { isDisabled, isFocused }) => {
-        return {
-          ...styles,
-          color: "black",
-          backgroundColor: isDisabled ? null : isFocused ? "#def4ff" : null
-        };
-      }
-    };
-
-    return (
-      <div className="c-panel__head">
-        <Select
-          options={options}
-          className={"c-list-options"}
-          onChange={this.handleOnChange}
-          styles={customStyles}
-          defaultValue={selectedValue}
-        />
-      </div>
-    );
-  }
-
-  handleOnChange(opts) {
-    this.props.updateTileById(opts.tileId, opts.quoteId);
-  }
-
   render() {
     return (
-      <div className="c-panel">
-        {this.renderCurrencyPair()}
+      <React.Fragment>
         <div className="c-panel__body">
           {this.buildIndicator()}
           <Arrow hasBuyPriceDecreased={this.state.hasBuyPriceDecreased} />
           {this.buildIndicator(false)}
         </div>
         <div className="c-panel__foot" />
-      </div>
+      </React.Fragment>
     );
-  }
-
-  componentDidUpdate(prevProps) {
-    if (prevProps.buyPrice > this.props.buyPrice) {
-      this.setState({
-        hasBuyPriceDecreased: true
-      });
-    } else if (prevProps.buyPrice < this.props.buyPrice) {
-      this.setState({
-        hasBuyPriceDecreased: false
-      });
-    }
   }
 }
