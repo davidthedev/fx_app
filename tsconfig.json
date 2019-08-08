@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": false,
+    "esModuleInterop": true,
+    "jsx": "preserve",
+    "module": "es6",
+    "moduleResolution": "node",
+    "noImplicitReturns": false,
+    "outDir": "./dist",
+    "resolveJsonModule": true,
+    "target": "es2017"
+  },
+  "typeRoots": "./node_modules/@types/",
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules", "src/assets"]
+}

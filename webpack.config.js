@@ -1,40 +1,41 @@
-const path = require('path');
-
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  mode: 'development',
+  mode: "development",
   entry: {
-    index: './src/index.js',
-    styles: './src/scss/index.scss'
+    index: "./dist/index.jsx",
+    styles: "./src/scss/index.scss"
   },
   output: {
-    path: path.resolve(__dirname, 'src/assets/'),
-    filename: 'js/[name].js'
+    path: path.resolve(__dirname, "web/assets/"),
+    filename: "js/[name].js"
   },
+  devtool: "source-map",
   module: {
     rules: [
       {
-        test: /\.(js|jsx)?$/, 
+        test: /\.(j|t)(s|sx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
+          loader: "babel-loader"
         }
-      }, 
+      },
       {
         test: /\.(scss)?$/,
         use: [
-        MiniCssExtractPlugin.loader,
-        {
-          loader: 'css-loader'
-        },
-        {
-          loader: 'sass-loader',
-          options: {
-            sourceMap: true
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader"
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true
+            }
           }
-        }]
-      },
+        ]
+      }
     ]
   },
   plugins: [
@@ -43,10 +44,10 @@ module.exports = {
     })
   ],
   externals: {
-    react: 'React',
-    'react-dom': 'ReactDOM'
+    react: "React",
+    "react-dom": "ReactDOM"
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: [".js", ".jsx", ".tsx"]
   }
-}
+};
